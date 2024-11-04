@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            background-color: black;
+        }
+        .container {
+            border: 2px solid gray; 
+            background-color: bisque;
+            border-radius: 10px; 
+            padding: 20px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            margin-top: 20px;
+            width: 100%; 
+            max-width: 400px; 
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 10px; 
+        }
+        #output {
+            grid-column: span 4; 
+            padding: 10px; 
+            font-size: 30px; 
+            height: 50px; 
+            background-color: rgb(188, 211, 153); 
+            color: black;
+        }
+        .btn-font {
+            font-size: 30px; 
+            width: 100%; 
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px; 
+                max-width: 90%; 
+                grid-template-columns: repeat(4, 1fr); 
+            }
+            .btn-font {
+                font-size: 24px; 
+            }
+            #output {
+                font-size: 24px; 
+                height: 40px; 
+            }
+        }
+    </style>
+    <script src="./script.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h5 class="text-secondar">Calculator</h5>
+        <input type="text" id="output" class="form-control" readonly>
+
+        <button id="ac" onclick="clearAll()" class="btn btn-danger btn-font" style="grid-column: span 2;">AC</button>
+        <button id="clear" onclick="clear1()" class="btn btn-danger btn-font"><i class="fas fa-backspace"></i></button>
+        <button id="add" onclick="displayContent('+')" class="btn btn-warning btn-font">+</button>
+
+        <button id="one" onclick="displayContent('1')" class="btn btn-primary btn-font">1</button>
+        <button id="two" onclick="displayContent('2')" class="btn btn-primary btn-font">2</button>
+        <button id="three" onclick="displayContent('3')" class="btn btn-primary btn-font">3</button>
+        <button id="sub" onclick="displayContent('-')" class="btn btn-warning btn-font">-</button>
+
+        <button id="four" onclick="displayContent('4')" class="btn btn-primary btn-font">4</button>
+        <button id="five" onclick="displayContent('5')" class="btn btn-primary btn-font">5</button>
+        <button id="six" onclick="displayContent('6')" class="btn btn-primary btn-font">6</button>
+        <button id="multiply" onclick="displayContent('*')" class="btn btn-warning btn-font">*</button>
+
+        <button id="seven" onclick="displayContent('7')" class="btn btn-primary btn-font">7</button>
+        <button id="eight" onclick="displayContent('8')" class="btn btn-primary btn-font">8</button>
+        <button id="nine" onclick="displayContent('9')" class="btn btn-primary btn-font">9</button>
+        <button id="div" onclick="displayContent('/')" class="btn btn-warning btn-font">/</button>
+
+        <button id="dot" onclick="displayContent('.')" class="btn btn-primary btn-font">.</button>
+        <button id="zero" onclick="displayContent('0')" class="btn btn-info btn-font">0</button>
+        <button id="doubzero" onclick="displayContent('00')" class="btn btn-info btn-font">00</button>
+        <button id="equal" onclick="showResult()" class="btn btn-success btn-font"><b>=</b></button>
+    </div>
+
+</body>
+</html>
